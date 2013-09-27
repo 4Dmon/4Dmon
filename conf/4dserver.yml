@@ -1,0 +1,19 @@
+# 4D server related configuration
+4dserver:
+    # The name of the 4D process to monitor
+    processName: 4D Server.exe
+
+    # The path on disk to the various start, stop, etc. scripts
+    scriptsPath: PATH/TO/SCRIPTS/FOLDER
+
+    # The 'magic routes' provided by the 4dmon component
+    appRoutes:
+        servercheck: http://localhost/SERVERCHECK
+        appstate: http://localhost/APPSTATE
+        shutdown: http://localhost/SHUTDOWN
+        initscripts: http://localhost/INITSCRIPTS
+        initstatus: http://localhost/INITSTATUS
+
+    # The port over which 4D client connects to 4D server
+    clientServer:
+      portNumber: 19813

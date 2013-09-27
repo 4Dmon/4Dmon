@@ -1,0 +1,41 @@
+extends ../layout
+
+block content
+  h1 System Snapshot
+  p Taking snapshot...
+
+  ul.snapshot
+    each t in trackers
+      li
+        .tracker-name= t
+        .tracker-value( data-tracker=t )
+          img( src="/images/loading.gif" )
+
+  //- Mustache like template
+  script#tracker-value-tpl( type="text/template" )
+    span.tracker-detail-name {{name}}:&nbsp;
+    span.tracker-detail-value {{value}}
+    br
+
+  div
+    button.btn#screenshotButton 
+      | <i class="icon-camera"></i> Take a Screenshot
+  div#screenshot(hidden="true")
+    p Picmon is taking a screenshot...
+    div#DesktopScreenshot(hidden="true")
+      b Desktop Screenshot
+      br
+      img(src="/images/loading.gif")
+    div#ClientScreenshot(hidden="true")
+      b 4D Client Screenshot
+      br
+      img(src="/images/loading.gif")
+    div#ServerScreenshot(hidden="true")
+      b 4D Server Screenshot
+      br
+      img(src="/images/loading.gif")
+
+
+block scripts
+  script( type="text/javascript", src="/javascripts/snapshot/snapshot.js" )
+  script( type="text/javascript", src="/javascripts/snapshot/screenshot.js")

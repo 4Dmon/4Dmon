@@ -1,0 +1,15 @@
+# 4D client related configuration
+4dclient:
+    # The name of the 4D process to monitor
+    processName: 4D.exe
+
+    # The path on disk to the various start, stop, etc. scripts
+    scriptsPath: PATH/TO/SCRIPTS/FOLDER
+
+    # The 'magic routes' provided by the 4dmon component
+    appRoutes:
+        servercheck: http://localhost/SERVERCHECK
+        appstate: http://localhost/APPSTATE
+        shutdown: http://localhost/SHUTDOWN
+        initscripts: http://localhost/INITSCRIPTS
+        initstatus: http://localhost/INITSTATUS

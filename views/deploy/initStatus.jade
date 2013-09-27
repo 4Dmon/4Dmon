@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+    .span6
+        p Retrieving status of initialization scripts...
+        b Success? !{success}
+        p !{message}
+        
+        p <b>Recently run scripts</b>
+        pre
+            for script in scripts
+                p
+                    each property, key in script
+                         !{key}: !{property}<br/>
+            else
+                p No data available!

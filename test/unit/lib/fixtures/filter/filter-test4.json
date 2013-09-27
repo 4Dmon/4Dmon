@@ -1,0 +1,17 @@
+{
+	"items": [{
+		"foo": "bar",
+		"super": "blargus"
+	},{
+		"foo": "foobar",
+		"super": "blargasaurus"
+	}],
+	"expected": [{
+		"foo": "bar",
+		"super": "blargus"
+	},{
+		"foo": "foobar",
+		"super": "blargasaurus"
+	}],
+	"filters": []
+}

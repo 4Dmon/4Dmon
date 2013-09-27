@@ -1,0 +1,23 @@
+email:
+
+    sender:
+        name: 4Dmon
+        email: no-reply@example.com
+
+    recipients:
+        WATCHDOG_ERROR: developers@examples
+
+    defaultService: sendgrid
+
+    services:
+        gmail:
+            service: Gmail
+            transport: SMTP
+            auth:
+                username: no-reply@example
+                password: PASSWORD
+
+        sendgrid:
+            auth:
+                username: USERNAME
+                password: PASSWORD

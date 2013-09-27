@@ -1,0 +1,47 @@
+@import "mixins";
+
+body {
+  padding-top: 25px;
+
+  .footer {
+    margin-bottom: 15px;
+    font-size: 90%;
+  }
+}
+
+// -----------------------------------------------------
+// Snapshot
+// -----------------------------------------------------
+ul.snapshot {
+  padding: 0;
+  margin: 0;
+
+  li {
+    .tracker-name {
+      float: left;
+      width: 75px;
+      font-weight: bold;
+      border-left: 2px dotted #ccc;
+      padding-left: 3px;
+    }
+
+    .tracker-value {
+      float: left;
+      margin-left: 75px;
+    }
+
+    list-style-type: none;
+    margin-bottom: 15px;
+    .clearfix();
+  }
+}
+
+// -----------------------------------------------------
+// Doc formatting
+// -----------------------------------------------------
+.tracker-stat-id {
+  before: "ID: ";
+}
+
+.tracker-stat-desc {
+}

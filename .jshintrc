@@ -1,0 +1,36 @@
+{
+	"predef": [
+		"$",
+		"jQuery"
+	]
+	, "browser":   true
+	, "node":      true
+	, "devel":     false
+	, "asi":       false	
+	, "bitwise":   false
+ 	, "boss":      false
+	, "camelcase": true
+	, "curly":     true
+	, "debug":     false
+	, "eqeqeq":    true
+	, "eqnull":    true
+	, "evil":      true
+	, "forin":     true 
+	, "immed":     true
+	, "latedef":   true
+	, "laxcomma":  true
+	, "newcap":    true
+	, "noarg":     true
+	, "noempty":   false
+	, "nonew":     true
+	, "onevar":    true
+	, "plusplus":  false
+	, "regexp":    false
+	, "strict":    false
+	, "sub":       true
+	, "smarttabs": false
+	, "trailing":  true
+	, "undef":     true
+	, "unused":    false
+	, "white":     false
+}

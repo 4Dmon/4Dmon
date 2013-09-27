@@ -1,0 +1,14 @@
+{
+	"items": [{
+		"foo": "bar",
+		"super": "blargus"
+	}],
+	"expected": [{
+		"foo": "bar",
+		"super": "blargus"
+	}],
+	"filters": [{
+		"foo": "bar",
+		"super": "blargus"
+	}]
+}

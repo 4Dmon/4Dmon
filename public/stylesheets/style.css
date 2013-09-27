@@ -1,0 +1,51 @@
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.clearfix:after {
+  clear: both;
+}
+body {
+  padding-top: 25px;
+}
+body .footer {
+  margin-bottom: 15px;
+  font-size: 90%;
+}
+ul.snapshot {
+  padding: 0;
+  margin: 0;
+}
+ul.snapshot li {
+  list-style-type: none;
+  margin-bottom: 15px;
+  *zoom: 1;
+}
+ul.snapshot li .tracker-name {
+  float: left;
+  width: 75px;
+  font-weight: bold;
+  border-left: 2px dotted #ccc;
+  padding-left: 3px;
+}
+ul.snapshot li .tracker-value {
+  float: left;
+  margin-left: 75px;
+}
+ul.snapshot li:before,
+ul.snapshot li:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+ul.snapshot li:after {
+  clear: both;
+}
+.tracker-stat-id {
+  before: "ID: ";
+}

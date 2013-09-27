@@ -1,0 +1,68 @@
+extends ../layout
+
+mixin configForm(obj, depth, path)
+  div
+    - each val, key in obj
+      - if (typeof val === 'string' && /password/i.test(key))
+        li(style="list-style-type:none")
+          div(class="control-group")
+            label(class="control-label",for="#{key}") #{key}
+            div(class="controls")
+              input(class="input-xxlarge",type="password",id="#{key}",name="#{path+':'+key}",value="#{val}")
+
+      - else if (typeof val === 'string')
+        li(style="list-style-type:none")
+          div(class="control-group")
+            label(class="control-label",for="#{key}") #{key}
+            div(class="controls")
+              input(class="input-xxlarge",type="text",id="#{key}",name="#{path+':'+key}",value="#{val}")
+
+      - else if (typeof val === 'number')
+        li(style="list-style-type:none")
+          div(class="control-group")
+            label(class="control-label",for="#{key}") #{key}
+            div(class="controls")
+              input(class="input-mini",type="text",id="#{key}",name="#{path+':'+key}",value="#{val}")
+
+      - else if (typeof val === 'boolean')
+        li(style="list-style-type:none")
+          div(class="control-group")
+            label(class="control-label", for="#{key}") #{key}
+            div(class="controls")
+              div(class="switch", tabindex="0")
+                input(type="checkbox",id="#{key}",name="#{path+':'+key}",value="true",checked=(val ? "checked" : undefined))
+                input(type="hidden",name="#{path+':'+key}",value="false")
+
+      - else if (val instanceof Array)
+        - text = val.join("\n")
+
+        li(style="list-style-type:none")
+          div(class="control-group")
+            label(class="control-label", for="#{key}") #{key}
+            div(class="controls")
+              textarea(class="input-xxlarge",spellcheck="false",rows="#{val.length}",id="#{key}",name="#{path+':'+key}<arr>") !{text}
+
+      - else if (typeof val === 'object')
+          case depth
+            when 0
+              legend(style="color:#006699") <strong>#{key}</strong>
+              mixin configForm(val, depth+1, path+key)
+            default
+              <ul style="list-style-type:none">
+              h5 #{key}
+              mixin configForm(val, depth+1, path+":"+key)
+              </ul>
+
+block content
+  h1 4Dmon Configuration
+  div(id="savedAlert",class="alert alert-success",hidden="true")
+    button(type="button", class="close", data-dismiss="alert") &times;
+    <strong>Configuration saved!</strong> Please restart 4Dmon for changes to take immediate effect.
+  form(id="configForm",class="form-horizontal")
+    fieldset
+      mixin configForm(conf, 0, "")
+      button.btn#submitButton(id="submitButton",type="submit", class="btn btn-primary") Submit
+
+
+block scripts
+  script( type="text/javascript", src="/javascripts/option/option.js" )

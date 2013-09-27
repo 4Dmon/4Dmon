@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    .span6!= markdown( md )
+    .span6
+      .stat-chart( data-tracker="memmon", data-stat="server_memory" )
+      .stat-chart( data-tracker="memmon", data-stat="client_memory" )
+
+block scripts
+  script( src="http://code.highcharts.com/highcharts.src.js" )
+  script( src="/javascripts/hc-stats.js" )

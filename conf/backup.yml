@@ -1,0 +1,14 @@
+# Backup configuration
+backup:
+
+    # The root folder in which backups will be stored
+    backup_dir: PATH/TO/BACKUP/FOLDER
+
+    # The files and folders that should be backed up
+    backup_items:
+    - 'SERVER/STRUCTURE/FOLDER/Components'
+    - 'SERVER/STRUCTURE/FOLDER/web'
+    - 'SERVER/STRUCTURE/FOLDER/web_static'
+    - 'SERVER/STRUCTURE/FOLDER/Libraries'
+    - 'SERVER/STRUCTURE/FOLDER/TWNY.4DB'
+    - 'SERVER/STRUCTURE/FOLDER/TWNY.4D'

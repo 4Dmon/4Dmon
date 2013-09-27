@@ -1,0 +1,78 @@
+- var title = title || "4Dmon"
+
+doctype 5
+html
+  head
+    title= title
+    meta( name="viewport", cotent="width=device-width, initial-scale=1.0" )
+    link( rel="stylesheet", href="//static.ivantagehealth.com/vendors/bootstrap/bootstrap-2.2.2/css/bootstrap.min.css" )
+    link( rel="stylesheet", href="//static.ivantagehealth.com/vendors/bootstrap/bootstrap-2.2.2/css/bootstrap-responsive.min.css" )
+    link( rel="stylesheet", href="/stylesheets/style.css" )
+    link( rel="stylesheet", href="/stylesheets/packages/bootstrapSwitch/bootstrapSwitch.css" )
+  body
+
+    .container
+      .navbar
+        .navbar-inner
+          .container
+            //- Show this when we collapse the bar (small screens)
+            a.btn.btn-navbar( data-toggle="collapse", data-target=".nav-collapse" )
+              snap.icon-bar
+              snap.icon-bar
+              snap.icon-bar
+
+            //- Main nav bar
+            a.brand( href="/" ) 4Dmon
+            .nav-collapse.collapse
+              ul.nav
+                li
+                  a( href="/doc" ) Docs
+                li
+                  a( href="/snapshot", title="Take a system snapshot" ) Snapshot
+                li.dropdown
+                    a( href="#", data-toggle="dropdown" ).dropdown-toggle
+                      | 4D <b class="caret"></b>
+                      ul.dropdown-menu: li: a( href="/4d/backup" ) Backup
+                li.dropdown
+                  a( href="#", data-toggle="dropdown" ).dropdown-toggle
+                    | Server <b class="caret"></b>
+                    ul.dropdown-menu
+                      li: a( href="/4d/server/info" ) Info
+                      li: a( href="/4d/server/build" ) Build
+                      li: a( href="/4d/server/stop" ) Stop
+                      li: a( href="/4d/server/start" ) Start
+                li.dropdown
+                  a( href="#", data-toggle="dropdown" ).dropdown-toggle
+                    | Client <b class="caret"></b>
+                    ul.dropdown-menu
+                      li: a( href="/4d/client/info" ) Info
+                      li: a( href="/4d/client/stop" ) Stop
+                      li: a( href="/4d/client/start" ) Start
+                li.dropdown
+                  a( href="#", data-toggle="dropdown" ).dropdown-toggle
+                    | Deploy <b class="caret"></b>
+                    ul.dropdown-menu
+                      li: a( href="/deploy/initScripts" ) Init Scripts
+                      li: a( href="/deploy/initStatus" ) Init Status
+                li: a( href="/option", title="Configure 4DMon") Configure
+
+              div(class="pull-right")
+                a.brand(href="#") Monitor
+                div(id="monitorSwitch",class="switch", data-on="success", data-off="danger", style="margin-top:5px")
+                  input(type="checkbox")
+
+      .row-fluid
+        block content
+
+      .footer
+        hr
+        span
+          | Copyright (c) 2013 iVantage Health Analitics <br />
+          | Licensed under the <a href="https://github.com/4dmon/4dmon/blob/master/LICENSE-MIT">MIT License</a>
+        span.pull-right: a(href="#") Top
+
+  script( type="text/javascript", src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" )
+  script( type="text/javascript", src="//ivantagecdn.com/vendors/bootstrap/bootstrap-2.2.2/js/bootstrap.min.js" )
+  script( type="text/javascript", src="/javascripts/packages/bootstrapSwitch/bootstrapSwitch.js")
+  script( type="text/javascript", src="/javascripts/monitorSwitch.js")
+  block scripts

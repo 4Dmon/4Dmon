@@ -1,0 +1,15 @@
+machines:
+
+    clients:
+    - EX-CLIENT-WEBSERVER-PROD-01
+    - EX-CLIENT-WEBSERVER-STAGE-01
+    - EX-CLIENT-WEBSERVER-DEV-01
+
+    servers:
+    - EX-SERVER-PROD-01
+    - EX-SERVER-STAGE-01
+    - EX-SERVER-DEV-01
+
+    prod:
+    - EX-SERVER-PROD-01
+    - EX-CLIENT-WEBSERVER-PROD-01

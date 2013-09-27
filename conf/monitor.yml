@@ -1,0 +1,47 @@
+monitor:
+    pulse: 2000
+    runOnStartup: true
+    heartbeat:
+        show: true
+        colors: true
+    interval:
+        timeout: 60000
+        maxRestarts: 25
+        sendEmailAfterMaxRestarts: true
+        trackers:
+        - memmon
+    snapshot:
+        trackers:
+        - memmon
+        - appmon
+        - sysmon
+    badness:
+        trackers:
+        - memmon
+        - picmon
+    badStuff:
+        errorTolerance: 3
+        serverDown:
+            check: false
+            error: SERVER_DOWN
+            action:
+            - EMAIL
+            - START_SERVER
+        clientDown:
+            check: false
+            error: CLIENT_DOWN
+            action:
+            - START_CLIENT
+        webRequests:
+            check: false
+            error: NO_WEB_REQUESTS
+            action:
+            - EMAIL
+            - STOP_CLIENT
+            - START_CLIENT
+        clientDisconnect:
+            check: false
+            error: CLIENT_DISCONNECT
+            action:
+            - STOP_CLIENT
+            - START_CLIENT

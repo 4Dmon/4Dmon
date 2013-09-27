@@ -1,0 +1,48 @@
+extends ../layout
+
+block content
+	.span6
+		div!= markdown( md )
+
+		if stats.length
+			h3 Exposed Stats
+			ul.tracker-stat-list
+				for stat in stats
+					li.tracker-stat
+						h4.tracker-stat-name= stat.name
+						.tracker-stat-id
+							| <strong>ID</strong>: !{stat.id}
+						.tracker-stat-desc
+							| <strong>Description</strong>: !{stat.description}
+
+	.span6
+		h3 4dmon is trying to learn...
+		p Did you write a new tracker? Here's some stuff you should know:
+			ul
+				li
+					| Place your tracker code in
+					| <code>./trackers/<i>myTracker</i>.js</code>
+				li
+					| Make sure <code>./trackers/<i>myTracker</i>.js</code> has at least
+					| two exports... itself, a function that takes a callback as its only
+					| parameter; and a <code>getStats()</code> function that returns an
+					| array of objects, each with a reference to the name and id for
+					| that tracker. For example:
+					| <pre>[{
+					|   "id": "my_sweet_logger",
+					|   "name": "Important statistic!",
+					|   "description": "This is an optional description!"
+					| }]</pre>
+				li
+					| Register your tracker in <code>./conf/monitor.js</code>, this is how
+					| we keep track of which trackers should be run on regular intervals,
+					| in the event of a crash, or only when the user requests a system
+					| snapshot
+				li
+					| Write a README for your tracker and place it in
+					| <code>./doc/<i>myTracker</i>.md</code>. Then, run <code>grunt</code>
+					| from the command line and the your tracker doc should show up in the
+					| main list of trackers <a href="/doc">here</a>
+				li
+					| For a complete example tracker check out
+					| <code>./trackers/memmon.js</code>
