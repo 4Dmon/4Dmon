@@ -230,7 +230,7 @@ heartbeat = function() {
 // What to do when badness strikes?
 // -----------------------------------------------------
 takeActionHelper = function( theError ) {
-					
+
 	// -----------------------------------------------------
 	// Run our badness trackers
 	// -----------------------------------------------------
@@ -320,7 +320,7 @@ takeActionHelper = function( theError ) {
 							// ---------------------------------------------
 							// If we didn't fix it immediately, that might be okay!
 							// We should only alert the devs once we're pretty sure.
-							// Check again in a minute and if we're still in trouble, 
+							// Check again in a minute and if we're still in trouble,
 							// say so. Otherwise say it was okay.
 							// ---------------------------------------------
 							setTimeout(function() {
@@ -375,6 +375,14 @@ makeActionFunction = function( action ) {
 				actionUtil.executeScript("server", "start", cb);
 			};
 			break;
+
+    case "STOP_SERVER":
+      seriesFunc = function ( cb ) {
+        console.warn( "############  Trying to stop SERVER " + Date.now() + " ############" );
+        actionLogger.info( "4dmon performed action: " + action + " in response to error: " + lastErr );
+        actionUtil.executeScript("server", "stop", cb);
+      };
+      break;
 
 		case "START_CLIENT":
 			seriesFunc = function ( cb ) {
