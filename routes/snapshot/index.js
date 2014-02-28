@@ -20,7 +20,6 @@ exports.trackerValue = function( req, res ) {
 		, tracker = valise( "trackers:" + trackerId )
 		, stats = tracker.getStats()
 		, respObj = { data: [] }
-		, startTime = new Date()
 		, done
 		;
 
@@ -42,8 +41,7 @@ exports.trackerValue = function( req, res ) {
 		// -----------------------------------------------------
 		stats.forEach( function( statObj ) {
 			getStatLogger( trackerId, statObj.id ).query({
-					"from": startTime,
-					"until": new Date()
+					start:-1
 				}, function( err, results ) {
 					var logs = results.file
 						, success = !err && logs.length
