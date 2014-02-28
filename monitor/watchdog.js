@@ -11,6 +11,7 @@ var valise = require( "valise" )
 	, envConf = nconf.get( "env" )
 	, emailUtil = valise( "lib:email-util" )
 	, watchdog
+	, socket
 	;
 
 watchdog = function() {

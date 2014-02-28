@@ -339,7 +339,7 @@ takeActionHelper = function( theError ) {
 										);
 									}
 
-								})
+								});
 							}, 60000);
 						}
 
@@ -466,7 +466,7 @@ didIFixIt = function( badness, cb2 ) {
 			return (monitorUtil.webRequestsCheck(cb));
 
 	}
-}
+};
 
 // -----------------------------------------------------
 // Kick off the monitor harness loop
