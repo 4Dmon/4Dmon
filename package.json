@@ -30,7 +30,8 @@
     "socket.io-client": "~0.9.11",
     "nconf": "~0.6.7",
     "winston": "~0.7.1",
-    "win-spawn": "~1.1.1"
+    "win-spawn": "~1.1.1",
+		"file-tail": "~0.2.0"
   },
   "devDependencies": {
     "grunt": "~0.4.0",
