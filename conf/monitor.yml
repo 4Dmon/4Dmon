@@ -5,11 +5,12 @@ monitor:
         show: true
         colors: true
     interval:
-        timeout: 60000
+        timeout: 5000
         maxRestarts: 25
         sendEmailAfterMaxRestarts: true
         trackers:
         - memmon
+        - logmon
     snapshot:
         trackers:
         - memmon
