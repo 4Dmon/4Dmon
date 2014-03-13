@@ -11,10 +11,10 @@
     "url": "https://github.com/4Dmon/4Dmon.git"
   },
   "dependencies": {
-    "lodash": "*",
+    "lodash": "~2.4.1",
     "express": "3.0.0rc3",
     "jade": "0.30.0",
-    "less-middleware": "*",
+    "less-middleware": "~0.1.15",
     "valise": "~0.3.2",
     "node-markdown": "~0.1.1",
     "async": "~0.1.22",
