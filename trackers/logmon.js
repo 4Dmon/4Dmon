@@ -14,14 +14,14 @@ var valise = require( "valise" )
 	;
 
 function debugLog (text) {
-	fs.appendFile('logmon-debug.log', text + '\n');
+	if(true){fs.appendFile('logmon-debug.log', text + '\n');}
 }
 
 // -----------------------------------------------------
 // Create a trackerHelper for each tracked logfile
 // -----------------------------------------------------
 var helpers = [];
-var fds = _.pluck(logmonConf.logFiles, 'location');
+var fds = logmonConf.logFiles;
 _.each(fds, function(fd) {
 	debugLog("watching: " + fd);
 	helpers.push(logMonHelper.helpWatch(fd));
