@@ -49,3 +49,7 @@ ul.snapshot li:after {
 .tracker-stat-id {
   before: "ID: ";
 }
+#log-box textarea {
+  width: 100%;
+  min-height: 100px;
+}
