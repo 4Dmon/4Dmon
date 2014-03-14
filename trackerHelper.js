@@ -54,5 +54,7 @@ function justLetters (s) {
 }
 
 function debugLog (text) {
-	fs.appendFile('logmon-helper-debug.log', text + '\n');
+	if (false) {
+		fs.appendFile('logmon-helper-debug.log', text + '\n');
+	}
 }

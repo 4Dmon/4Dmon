@@ -64,3 +64,20 @@ module.exports.getStats = function() {
 		"name": "Latest log entry",
 	}];
 };
+
+// -----------------------------------------------------
+// Get ze logs
+// -----------------------------------------------------
+module.exports.getLogs = function(req, res) {
+	logger = trackerUtil.getStatLogger( trackerId, statID );
+	logger.query({rows: 100, order: "desc"}, function( err, results ) {
+		var logs = results.file;
+
+		// Logs are posted at the info level
+		logs = _.where( logs, {
+			level: "info"
+		});
+
+		res.json({ logs: _.pluck(logs,"message") });
+	});
+}

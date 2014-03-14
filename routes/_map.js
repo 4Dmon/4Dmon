@@ -14,6 +14,7 @@ var valise = require( "valise" )
 	, jtr = valise( "routes:test/jtr" )
 	, hc = valise( "routes:highcharts" )
 	, monitor = valise( "routes:monitor" )
+	, logmon = valise( "trackers:logmon" )
 	;
 
 module.exports = function( app ) {
@@ -66,6 +67,9 @@ module.exports = function( app ) {
 
 	// Charting
 	app.get( "/tracker/:tracker/chart", hc.getConfig );
+
+	// Other UI ajax
+	app.get( "/tracker/:tracker/newLogs", logmon.getLogs );
 
 	app.get( "*", function( req, res ) {
 		res.render( "404" );

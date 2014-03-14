@@ -5,7 +5,10 @@ block content
     .span6
       .stat-chart( data-tracker="memmon", data-stat="server_memory" )
       .stat-chart( data-tracker="memmon", data-stat="client_memory" )
+      #log-box
+        textarea Tracking log files...
 
 block scripts
   script( src="http://code.highcharts.com/highcharts.src.js" )
   script( src="/javascripts/hc-stats.js" )
+  script( src="/javascripts/logs-widget.js" )
