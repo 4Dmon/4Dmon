@@ -47,7 +47,7 @@ module.exports = (function(){
 		_.each(helpers,function(helper) {
 			var newStuff = helper.getAnyNewEntries()
 			_.each(newStuff, function(line){
-				loggerFunc(line, "logfilename");
+				loggerFunc(line, helper.fileName);
 			});
 		});
 
@@ -66,7 +66,7 @@ module.exports.getStats = function() {
 };
 
 // -----------------------------------------------------
-// Get ze logs
+// Returns the newest logs in the tracker's statLogger.
 // -----------------------------------------------------
 module.exports.getLogs = function(req, res) {
 	logger = trackerUtil.getStatLogger( trackerId, statID );

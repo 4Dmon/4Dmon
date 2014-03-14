@@ -51,5 +51,8 @@ ul.snapshot li:after {
 }
 #log-box textarea {
   width: 100%;
-  min-height: 100px;
+  min-height: 150px;
+  white-space: pre;
+  word-wrap: normal;
+  overflow-x: scroll;
 }

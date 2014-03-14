@@ -1,14 +1,16 @@
-var tailMod = require( "file-tail" );
-var fs = require("fs");
+var tailMod = require( "file-tail" ),
+fs          = require("fs"),
+path        = require("path");
 
 module.exports = {
 	"helpWatch" : function(fd) {
-		var letters;
-		
-		var logMemory = [];
-		var newStuff = [];
-	
-		var tailer = tailMod.startTailing(fd);
+		var letters,
+		logMemory = [],
+		newStuff  = [],
+		tailer    = tailMod.startTailing(fd),
+		helper    = {};
+
+		helper.fileName = path.basename(fd);
 	
 	  // -----------------------------------------------------
 	  // Remember last x additions to log file, remembering only
@@ -36,7 +38,6 @@ module.exports = {
 			debugLog("newStuff length is now: " + newStuff.length);
 		});
 		
-		var helper = {};
 		
 		helper.getAnyNewEntries = function() {
 			var result = newStuff.slice(0);
