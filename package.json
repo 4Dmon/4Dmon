@@ -11,7 +11,7 @@
     "url": "https://github.com/4Dmon/4Dmon.git"
   },
   "dependencies": {
-    "lodash": "~2.4.1",
+    "lodash": "~4.17.19",
     "express": "3.0.0rc3",
     "jade": "0.30.0",
     "less-middleware": "~0.1.15",
